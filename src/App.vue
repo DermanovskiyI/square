@@ -1,30 +1,45 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<div class="wrapper">
+  <section class="hero">
+
+    <square></square>
+    <coords></coords>
+  </section>
+</div>
 </template>
 
+<script>
+import Square from './components/Square.vue';
+import Coords from './components/Coords.vue';
+
+export default {
+  components: {
+    Square,
+    Coords,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html, body {
+  height: 100%;
 }
-
-#nav {
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+#app {
+  height: 100%;
+}
+.wrapper {
+  height: 100%;
+  border: 2px solid black;
+}
+.hero {
+  height: 100%;
   padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  display: flex;
 }
 </style>
